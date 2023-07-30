@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Order Status Update</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div>
+        <header class="header-container">
+            <h1 class="header-title">The Words On The Bus</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sticker.html">Create Sticker</a></li>
+                    <li><a href="order.html">Order Status</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <h2 class="title-h2">Order Update</h2>
+            <!-- section for login form -->
+            <div class="form-container">
+                <form>
+                    <label for="email">Email Address:</label><br>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" autocomplete="off"><br>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" placeholder="password"><br><br>
+                    <!-- onclick check if the login details are valid -->
+                    <button type="button" onclick="loginIsValid(this.form)">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- embedded javascript -->
+    <script>
+        // function to check if login details are valid
+        function loginIsValid(form){
+        var email = form.email.value;
+        var password = form.password.value;
+
+        // does the email include @ symbol
+        var atSymbol = email.includes("@");
+        // does the email include a dot
+        var dot = email.includes(".");
+
+        // conditional statement to check details are valid
+        if (!atSymbol || !dot) {
+            alert("Invalid email: email must be a valid email address.");
+        } else if (password.length == 0){
+            alert("Invalid password: Password should not be empty.");
+        } 
+        // if valid, alert welcome
+        else {
+            alert("Welcome");
+        }
+    }
+    </script>
+    <footer class="footer"><p class="footer-p">&#169; The Words On The Bus - 2021</p></footer>
+</body>
+</html>

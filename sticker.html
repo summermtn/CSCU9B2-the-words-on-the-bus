@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Create Your Sticker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div>
+        <header class="header-container">
+            <h1 class="header-title">The Words On The Bus</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sticker.html">Create Sticker</a></li>
+                    <li><a href="order.html">Order Status</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <h2 class="title-h2">Create your bus sticker</h2>
+            <img id="campervan-image" src="images/vw-camper-orange.png" alt="camper-van" />
+            <canvas id="canvas" width="500" height="250"></canvas>
+
+            <div class="form-sticker-container">
+                <!-- auto-update the form on inputs -->
+                <form oninput="sticker()">
+                    <!-- 3 inputs for 3 lines of text -->
+                    <input id="top-line" class="text-input" type="text" autocomplete="off"><br>
+                    <input id="mid-line" class="text-input" type="text" autocomplete="off"><br>
+                    <input id="bot-line" class="text-input" type="text" autocomplete="off"><br>
+                    <label for="font-size">Choose a font size:</label>
+                    <!-- font size dropdown -->
+                    <select id="font-size" name="font-size">
+                        <!-- font size options -->
+                        <option class="font-size" value="16px">small</option>
+                        <option class="font-size" value="20px">medium</option>
+                        <option class="font-size" value="24px">large</option>
+                    </select><br>
+                    <label for="font-color">Choose a font color:</label>
+                    <!-- font color dropdown -->
+                    <select id="font-color" name="font-color">
+                        <!-- font color options -->
+                        <option class="font-color" value="#fff">white</option>
+                        <option class="font-color" value="#000">black</option>
+                        <option class="font-color" value="#FC0">yellow</option>
+                    </select><br>
+                    <label for="bus-color">Choose a bus color:</label>
+                    <!-- bus color dropdown -->
+                    <select id="bus-color" name="bus-color">
+                        <!-- bus color options with links to images -->
+                        <option class="bus-color" value="images/vw-camper-orange.png">orange</option>
+                        <option class="bus-color" value="images/vw-camper-blue.png">blue</option>
+                        <option class="bus-color" value="images/vw-camper-green.png">green</option>
+                      </select><br>
+                    <br>
+                    <!-- calculate size and cost button -->
+                    <button onClick="calculate()">Calculate Size</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Link to script file -->
+    <script src="scripts.js"></script>
+    <footer class="footer"><p class="footer-p">&#169; The Words On The Bus - 2021</p></footer>
+</body>
+</html>
